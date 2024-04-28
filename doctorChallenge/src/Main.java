@@ -7,44 +7,44 @@ public class Main {
 
     public static void main(String[] args) {
 
-        patientInfo();
+        Eye rightEye = new Eye("Right Eye", "normal", "blue");
+        Eye leftEye = new Eye("Left Eye", "short sighted", "blue");
+        Heart heart = new Heart("Heart", "normal", 75);
+        Stomach stomach = new Stomach("Stomach", "pud");
+        Skin skin = new Skin("Skin", "Burned");
 
+        Patient fullPatientInfo = new Patient("Tom", 25,leftEye, rightEye, heart, stomach, skin);
+        display(fullPatientInfo.getName(), fullPatientInfo.getAge() , leftEye, rightEye, heart, stomach, skin);
     }
 
 
-    static void patientInfo(){
+     static void display(String name, int age,  Eye leftEye, Eye rightEye, Heart heart, Stomach stomach, Skin skin){
 
         int chosenNumber = 0;
 
-        LeftEye myLeftEye = new LeftEye("Left Eye", "short sighted", "blue");
-        RightEye myRightEye = new RightEye("Right Eye", "normal", "blue");
-        Heart myHeart = new Heart("Heart", "normal", 75);
-        Stomach myStomach = new Stomach("Stomach", "pud");
-        Skin mySkin = new Skin("Skin", "Burned");
-
         do {
-            System.out.println("\nName: Tom\nAge: 25\nChoose an organ: \n" +
+            System.out.println("\nName: "+name + "\nAge: "+ age+"\nChoose an organ: \n" +
                     "\t1.Left Eye\n\t2.Right Eye\n\t3.Heart\n\t4.Stomach\n\t5.Skin\n\t6.Quit\n");
             Scanner scanner = new Scanner(System.in);
            chosenNumber = scanner.nextInt();
             switch (chosenNumber){
                 case 1:
-                    myLeftEye.printInfo("Left");
+                   leftEye.printInfo("Left");
                     break;
                 case 2:
-                    myRightEye.printInfo("Right");
+                   rightEye.printInfo("Right");
                     break;
 
                 case 3:
-                    myHeart.printInfo();
+                    heart.printInfo();
                     break;
 
                 case 4:
-                    myStomach.printInfo();
+                    stomach.printInfo();
                     break;
 
                 case 5:
-                    mySkin.printInfo();
+                    skin.printInfo();
                     break;
 
                 case 6:

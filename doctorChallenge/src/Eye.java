@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-public class LeftEye extends Organ{
+public class Eye extends Organ{
+
 
     private String color;
-    public LeftEye(String name, String medicalCondition, String color) {
+    public Eye(String name, String medicalCondition, String color) {
         super(name, medicalCondition);
         this.color = color;
     }
